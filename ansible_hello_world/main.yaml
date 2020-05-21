@@ -21,5 +21,9 @@
           dest: ~/Desktop/ASML/ansible_destination/package.py
           owner: andrewtian
           mode: u=rw,g=r,o=r
+      - name: Sychronize files from one dir to another
+        synchronize:
+          src: ~/Desktop/ASML/ansible_source/sync_package.py
+          dest: ~/Desktop/ASML/ansible_destination/sync_package2.py
       - debug: var=result
 
