@@ -1,0 +1,24 @@
+---
+  - hosts: localhost
+    remote_user: root
+    gather_facts: yes
+
+    vars_prompt:
+      - name: giveName
+        prompt: "Please provide your name"
+        private: no
+        failed_when: giveName is undefined
+
+
+    tasks:
+      - name: Python Execution
+        testing: yourName={{giveName}}
+        register: result
+      - name: Copy file from one dir to another
+        copy:
+          src: ~/Desktop/ASML/ansible_source/package.py
+          dest: ~/Desktop/ASML/ansible_destination/package.py
+          owner: andrewtian
+          mode: u=rw,g=r,o=r
+      - debug: var=result
+
