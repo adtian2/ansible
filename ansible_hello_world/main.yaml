@@ -3,11 +3,12 @@
     remote_user: root
     gather_facts: no
 
-    vars_prompt:
-      - name: giveName
-        prompt: "Please provide your name"
-        private: no
-        failed_when: giveName is undefined
+
+    #    vars_prompt:
+    #      - name: giveName
+    #        prompt: "Please provide your name"
+    #        private: no
+    #        failed_when: giveName is undefined
 
 
     tasks:
